@@ -17,7 +17,8 @@ my_parser.add_argument('-v',
 
 my_parser.add_argument('-p', '--path', action='store', type=str, required=False, help='The path of the source directory to do the migration to JDK 11. In case none is given, current path is used')
 
-my_parser.add_argument('-g', '--guide', action='store', type=str, required=False, help='This Migration Toolkit is based on Oracle JDK Migration Guide. Found on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf')
+my_parser.add_argument('-g', '--guide', default=False, action="store_true",
+                    help='Opens the Oracle JDK Migration Guide found on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf')
 
 my_parser.add_argument('-jmc', action='store', type=str, required=False, help='In JDK 11, JMC is available as a standalone package and not bundled in the JDK')
 
@@ -43,3 +44,7 @@ if args.path:
 else:
 	print('Tool will run in the current directory')
 	migration_jdk11.main(os.getcwd(), args.warn, args.security)
+
+if args.guide:
+	import webbrowser
+	webbrowser.open(r'migration-guide.pdf')

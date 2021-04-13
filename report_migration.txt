@@ -3,14 +3,3 @@
 /home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8a.java:	java.xml.bind
 /home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8.java:	java.xml.ws	java.xml.bind	java.lang.Thread.stop	Xbootclasspath/p
 /home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8c.java:	no deprecated module
-
-==== WARNINGS ====
-List of JAva EE and Corba modules AND APIs were removed
-java.xml.ws, java.xml.bind, java.xml.ws.annotation, java.corba, java.transaction, java.activation, java.se.ee, jdk.xml.ws, jdk.xml.bind, jdk.snmp, javax.security.auth.Policy, java.lang.Runtime.runFinalizersOnExit(True), java.lang.SecurityManager.checkAwtEventQueueAccess(), java.lang.SecurityManager.checkMemberAccess, java.lang.SecurityManager.checkSystemClipboardAccess, java.lang.SecurityManager.checkTopLevelWindow, java.lang.System.runFinalizersOnExit, java.lang.Thread.destroy(), java.lang.Thread.stop, Xbootclasspath/p
-See more references on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf
-
-==== SECURITY CERTIFICATES ====
-GTE CyberTrust Global Root certificate has been removed from the keystore in JDK 11.
-
- The following root certificates have been removed from the truststore in JDK 11:
-Several Symantec Root CAsBaltimore Cybertrust Code Signing CASECOM Root CertificateAOL and Swisscom root certificates

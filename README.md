@@ -44,11 +44,18 @@ optional arguments:
   -v, --verbose         shows debug logs
   -p PATH, --path PATH  The path of the source directory to do the migration
                         to JDK 11. In case none is given, current path is used
-  -g GUIDE, --guide GUIDE
-                        This Migration Toolkit is based on Oracle JDK
-                        Migration Guide. Found on
+  -g, --guide           Opens the Oracle JDK Migration Guide found on
                         https://docs.oracle.com/en/java/javase/11/migrate
                         /migration-guide.pdf
   -jmc JMC              In JDK 11, JMC is available as a standalone package
                         and not bundled in the JDK
+  -javaws JAVAWS        In JDK 11, Javaws was deprecated. See other options
+  -w, --warn            The report will add warnings
+  -s, --security        The report will add security details
 ~~~
+
+Disclaimer
+---
+
+This tool contains/displays the migration guide from Oracle provided by them on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf
+

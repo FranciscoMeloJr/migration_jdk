@@ -45,10 +45,20 @@ def find_module_from_mmap(mmap_data, module_name):
     	if mmap_data.find(module_name) != -1:
     		return True
 
-#add warnings
-def add_warns(outfile):
-    outfile.write("\n==== WARNINGS ====")
-    outfile.write("\nList of JAva EE and Corba modules removed\n")
+#add security
+def add_security(outfile):
+    outfile.write("\n\n==== SECURITY CERTIFICATES ====")
+    outfile.write("\nGTE CyberTrust Global Root certificate has been removed from the keystore in JDK 11.\n")
+    outfile.write("\n The following root certificates have been removed from the truststore in JDK 11:\n")
+    outfile.write("Several Symantec Root CAs")
+    outfile.write("Baltimore Cybertrust Code Signing CA")
+    outfile.write("SECOM Root Certificate")
+    outfile.write("AOL and Swisscom root certificates")
+
+#add security
+def add_warn(outfile):
+    outfile.write("\n\n==== WARNINGS ====")
+    outfile.write("\nList of JAva EE and Corba modules AND APIs were removed\n")
     outfile.write('%s' % ', '.join(map(str, get_deprecated_modules())))
     outfile.write("\nSee more references on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf")
 
@@ -80,7 +90,7 @@ def deprecated_modules_in_file(deprecated_mods, fname, debug = False):
     return list_deprecated
 
 #Main function
-def main(filepath=os.getcwd(), warns = False):
+def main(filepath=os.getcwd(), warns = False, security=False):
     print("Migration JDK 8 to JDK 11 Tool")
     #get all files in diretory
     list_files = get_java_files(filepath)
@@ -100,7 +110,10 @@ def main(filepath=os.getcwd(), warns = False):
         add_modules_report(outfile, [each_file, list_deprecated])
 
     if warns == True:
-        add_warns(outfile)
+        add_warn(outfile)
+
+    if security == True:
+        add_security(outfile)
 
     outfile.close()
     

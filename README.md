@@ -1,4 +1,5 @@
 Migration JDK 11 Helper
+--
 
 This is a simple tool to help migrate from JDK 8 to JDK 11 developed on Python 2.7.
 To make this simple I broke the script in two: migration_jdk11.py and migration_cli.py
@@ -12,6 +13,8 @@ migration_jdk11.py: Core functionality
 migration_cli.py: CLI interface
 
 Example usage:
+---
+
 ~~~
 $ python migration_jdk11.py
 Migration JDK 8 to JDK 11 Tool
@@ -23,6 +26,8 @@ Oops!  File is empty
 ~~~
 
 CLI interface:
+---
+
 ~~~
 $python migration_cli.py -p /EJBtests/migration_jdk
 Migration JDK 8 to JDK 11 Tool

@@ -45,6 +45,7 @@ else:
 	print('Tool will run in the current directory')
 	migration_jdk11.main(os.getcwd(), args.warn, args.security)
 
+#Displaying Migration Guide
 if args.guide:
 	import webbrowser
 	webbrowser.open(r'migration-guide.pdf')

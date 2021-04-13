@@ -16,7 +16,7 @@ def get_java_files(filepath=os.getcwd(), filetype='.java', debug = False):
 def get_deprecated_modules():
 	return ["java.xml.ws","java.xml.bind", "java.xml.ws.annotation", "java.corba", "java.transaction", "java.activation", "java.se.ee", "jdk.xml.ws", "jdk.xml.bind", "jdk.snmp", "javax.security.auth.Policy", "java.lang.Runtime.runFinalizersOnExit(True)","java.lang.SecurityManager.checkAwtEventQueueAccess()",
 "java.lang.SecurityManager.checkMemberAccess", "java.lang.SecurityManager.checkSystemClipboardAccess", "java.lang.SecurityManager.checkTopLevelWindow", "java.lang.System.runFinalizersOnExit",
-"java.lang.Thread.destroy()", "java.lang.Thread.stop"]
+"java.lang.Thread.destroy()", "java.lang.Thread.stop", "Xbootclasspath/p"]
 
 #create report [[fileA, [modulea, moduleb]], [[fileb, [modulea, moduleb]]
 def create_report( report_name = 'report_migration.txt', debug = False):
@@ -44,6 +44,13 @@ def find_module_from_mmap(mmap_data, module_name):
     if mmap_data:
     	if mmap_data.find(module_name) != -1:
     		return True
+
+#add warnings
+def add_warns(outfile):
+    outfile.write("\n==== WARNINGS ====")
+    outfile.write("\nList of JAva EE and Corba modules removed\n")
+    outfile.write('%s' % ', '.join(map(str, get_deprecated_modules())))
+    outfile.write("\nSee more references on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf")
 
 #read file to mmap
 def read_module_to_mmap(fname, debug = False):
@@ -73,7 +80,7 @@ def deprecated_modules_in_file(deprecated_mods, fname, debug = False):
     return list_deprecated
 
 #Main function
-def main(filepath=os.getcwd()):
+def main(filepath=os.getcwd(), warns = False):
     print("Migration JDK 8 to JDK 11 Tool")
     #get all files in diretory
     list_files = get_java_files(filepath)
@@ -91,6 +98,10 @@ def main(filepath=os.getcwd()):
         list_deprecated = deprecated_modules_in_file(deprecated_mods, each_file)
         #add file vs modules
         add_modules_report(outfile, [each_file, list_deprecated])
+
+    if warns == True:
+        add_warns(outfile)
+
     outfile.close()
     
 if __name__ == "__main__":

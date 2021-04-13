@@ -1,5 +1,5 @@
 ==== Report JDK 11 Migration ====
-/home/fdemeloj/Downloads/cases/EJBtests/migration_jdk/test_files/jdk8b.java:	java.corba
-/home/fdemeloj/Downloads/cases/EJBtests/migration_jdk/test_files/jdk8a.java:	java.xml.bind
-/home/fdemeloj/Downloads/cases/EJBtests/migration_jdk/test_files/jdk8.java:	java.xml.ws	java.xml.bind	java.lang.Thread.stop
-/home/fdemeloj/Downloads/cases/EJBtests/migration_jdk/test_files/jdk8c.java:	no deprecated module
+/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8b.java:	java.corba
+/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8a.java:	java.xml.bind
+/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8.java:	java.xml.ws	java.xml.bind	java.lang.Thread.stop	Xbootclasspath/p
+/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8c.java:	no deprecated module

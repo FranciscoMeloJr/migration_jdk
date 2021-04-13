@@ -21,6 +21,11 @@ my_parser.add_argument('-g', '--guide', action='store', type=str, required=False
 
 my_parser.add_argument('-jmc', action='store', type=str, required=False, help='In JDK 11, JMC is available as a standalone package and not bundled in the JDK')
 
+my_parser.add_argument('-javaws', action='store', type=str, required=False, help='In JDK 11, Javaws was deprecated. See other options')
+
+my_parser.add_argument("-warn", default=False, action="store_true",
+                    help='In JDK 11, Javaws was deprecated. See other options')
+
 # Execute the parse_args() method
 args = my_parser.parse_args()
 
@@ -31,7 +36,7 @@ if args.path:
 	    sys.exit()
 	else:
 		print "Path will be " + input_path
-		migration_jdk11.main()
+		migration_jdk11.main(input_path, args.warn)
 else:
-	print('Migration JDK 11 Helper. Select one option: -h for Help')
-	sys.exit()
+	print('Tool will run in the current directory')
+	migration_jdk11.main(os.getcwd(), args.warn)

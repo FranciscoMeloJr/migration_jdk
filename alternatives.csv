@@ -1,0 +1,10 @@
+module, alternative
+javax.security.auth.Policy, ????
+java.lang.Runtime.runFinalizersOnExit, No direct replacement 
+java.lang.System.runFinalizersOnExit, No direct replacement
+java.lang.SecurityManager.checkAwtEventQueueAccess, This method should be replaced by java.security.Permission.checkPermission with the AWTPermission(“accessEventQueue”) permission as a parameter 
+java.lang.SecurityManager.checkMemberAccess, Replace with java.security.Permission.checkPermission (as above) with RuntimePermission(“accessDeclaredMembers”).
+java.lang.SecurityManager.checkSystemClipboardAccess, Replace with java.security.Permission.checkPermission with AWTPermission(“accessClipboard”)
+java.lang.SecurityManager.checkTopLevelWindow, Replace with java.security.Permission.checkPermission with AWTPermission(“showWindowWithoutWarningBanner”).
+java.lang.Thread.destroy, deprecated in jdk 5
+java.lang.Thread.stop, use the no-argument version - warning it is also deprecated and unsafe. 

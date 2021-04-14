@@ -2,6 +2,9 @@ import csv
 
 """
 This module reads the alternatives.csv, which is the file with table for alternatives
+The alternatives are based on:
+https://medium.com/@speakjava/jdk-11-pitfalls-for-the-unwary-e08d864065c1
+https://medium.com/criciumadev/its-time-migrating-to-java-11-5eb3868354f9
 """
 
 def read_alternative_create_dict(alt_file='alternatives.csv', debug = False):
@@ -37,4 +40,4 @@ def read_alternative_file(alt_file='alternatives.csv'):
 
         print "Number of modules: " + str(line_count) + " lines."
 
-print read_alternative_create_dict()
+#print read_alternative_create_dict()

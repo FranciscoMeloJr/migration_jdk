@@ -48,4 +48,4 @@ else:
 #Displaying Migration Guide
 if args.guide:
 	import webbrowser
-	webbrowser.open(r'migration-guide.pdf')
+	webbrowser.open(r'modules/lib/migration-guide.pdf')

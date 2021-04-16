@@ -6,6 +6,7 @@ import sys
 
 #Migration JDK python:
 import migration_jdk11
+import modules.write_html as write_html
 
 # Create the parser
 my_parser = argparse.ArgumentParser(description='Migration JDK 11 Helper', usage='python migration_cli.py -path')
@@ -30,6 +31,9 @@ my_parser.add_argument('-w', '--warn', default=False, action="store_true",
 my_parser.add_argument('-s', '--security', default=False, action="store_true",
                     help='The report will add security details')
 
+my_parser.add_argument('--html', default=False, action="store_true",
+                    help='Report will be also generated in html')
+
 # Execute the parse_args() method
 args = my_parser.parse_args()
 
@@ -49,3 +53,7 @@ else:
 if args.guide:
 	import webbrowser
 	webbrowser.open(r'modules/lib/migration-guide.pdf')
+
+#Generate HTML
+if args.html:
+	write_html.write_html_from_file(report_path='report_migration.txt')

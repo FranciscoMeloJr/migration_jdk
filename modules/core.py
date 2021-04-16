@@ -49,12 +49,13 @@ def get_deprecated_modules():
 #create report [[fileA, [modulea, moduleb]], [[fileb, [modulea, moduleb]]
 def create_report( report_name = 'report_migration.txt', debug = False):
     outfile = open(report_name, "w") 
-    outfile.write("==== REPORT JDK 11 Migration ====")
+    outfile.write("==== REPORT JDK 11 Migration ==== \n")
+    outfile.write("==== File | Module & API ====\n")
     if debug == True:
         print "Report " + report_name +" will be created on " + os.getcwd()
     return outfile
 
-def add_modules_report(outfile, list_results_deprecated_mods, debug = False):
+def add_modules_report(outfile, list_results_deprecated_mods, debug = True):
     name_file = list_results_deprecated_mods[0]
     dep_modules = list_results_deprecated_mods[1]
     s1='\n'

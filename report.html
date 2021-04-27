@@ -1,0 +1,25 @@
+<html><head></head><body><h1> ==== REPORT JDK 11 Migration ==== 
+ </h1><h2> ==== File | Module & API ====
+ </h2><p>
+</p><p>/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8b.java:	java.corba
+</p><p>/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8a.java:	java.xml.bind
+</p><p>/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8.java:	java.xml.ws	java.xml.bind	java.lang.Thread.stop	Xbootclasspath/p
+</p><p>/home/fdemeloj/Downloads/cases/migration_jdk/test_files/jdk8c.java:	no deprecated module
+</p><p>
+</p><h2> ==== WARNINGS ====
+ </h2><p>List of JAva EE and Corba modules AND APIs were removed
+</p><p>java.xml.ws, java.xml.bind, java.xml.ws.annotation, java.corba, java.transaction, java.activation, java.se.ee, jdk.xml.ws, jdk.xml.bind, jdk.snmp, javax.security.auth.Policy, java.lang.Runtime.runFinalizersOnExit(True), java.lang.SecurityManager.checkAwtEventQueueAccess, java.lang.SecurityManager.checkMemberAccess, java.lang.SecurityManager.checkSystemClipboardAccess, java.lang.SecurityManager.checkTopLevelWindow, java.lang.System.runFinalizersOnExit, java.lang.Thread.destroy(), java.lang.Thread.stop, Xbootclasspath/p
+</p><p>See more references on https://docs.oracle.com/en/java/javase/11/migrate/migration-guide.pdf
+</p><p>
+</p><h2> ==== SECURITY CERTIFICATES ====
+ </h2><p>GTE CyberTrust Global Root certificate has been removed from the keystore in JDK 11.
+</p><p>
+</p><p>The following root certificates have been removed from the truststore in JDK 11:
+</p><p>Several Symantec Root CAs, Baltimore Cybertrust Code Signing CA, SECOM Root Certificate, AOL and Swisscom root certificates.
+</p><p>
+</p><h2> ==== ALTERNATIVES ====
+ </h2><p>For module java.lang.Thread.stop :  use the no-argument version - warning it is also deprecated and unsafe. 
+</p><p>No recommendation for: java.xml.bind
+</p><p>No recommendation for: java.corba
+</p><p>No recommendation for: java.xml.ws
+</p><p>No recommendation for: Xbootclasspath/p</p></body></html>
